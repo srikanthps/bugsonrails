@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091013090033) do
+ActiveRecord::Schema.define(:version => 20090913193600) do
 
   create_table "bugs", :force => true do |t|
-    t.integer  "defect_id",               :precision => 38, :scale => 0
+    t.integer  "defect_id"
     t.string   "defect_type"
     t.string   "priority"
     t.text     "summary"
@@ -21,21 +21,19 @@ ActiveRecord::Schema.define(:version => 20091013090033) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "estimate"
-    t.datetime "planned_completion_date"
-    t.integer  "developer_id",            :precision => 38, :scale => 0
-    t.integer  "reviewer_id",             :precision => 38, :scale => 0
-    t.integer  "release_id",              :precision => 38, :scale => 0
-    t.integer  "status_id",               :precision => 38, :scale => 0
-    t.boolean  "reviewed",                :precision => 1,  :scale => 0
-    t.boolean  "customer_issue",          :precision => 1,  :scale => 0
-    t.string   "customer"
+    t.date     "planned_completion_date"
+    t.integer  "developer_id"
+    t.integer  "reviewer_id"
+    t.integer  "release_id"
+    t.integer  "status_id"
+    t.boolean  "reviewed"
   end
 
   create_table "comments", :force => true do |t|
     t.text     "body"
-    t.integer  "commenter_id", :precision => 38, :scale => 0
+    t.integer  "commenter_id"
     t.string   "status"
-    t.integer  "bug_id",       :precision => 38, :scale => 0
+    t.integer  "bug_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "comment_type"
@@ -45,18 +43,12 @@ ActiveRecord::Schema.define(:version => 20091013090033) do
     t.string   "employee_id"
     t.string   "name"
     t.string   "contact_number"
-    t.string   "current_seat"
-    t.string   "machine_name"
-    t.string   "ip_address"
-    t.string   "new_seat"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",          :limit => 100
-    t.string   "current_port",   :limit => 30
-    t.string   "new_port",       :limit => 30
-    t.string   "nickname",       :limit => 20
-    t.boolean  "admin",                         :precision => 1, :scale => 0, :default => false
-    t.boolean  "active",                        :precision => 1, :scale => 0, :default => true
+    t.string   "nickname"
+    t.boolean  "admin",          :default => false
+    t.boolean  "active",         :default => true
   end
 
   create_table "releases", :force => true do |t|
@@ -70,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20091013090033) do
     t.string   "code"
     t.string   "description"
     t.string   "category"
-    t.boolean  "admin_only",  :precision => 1, :scale => 0, :default => false
+    t.boolean  "admin_only",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
