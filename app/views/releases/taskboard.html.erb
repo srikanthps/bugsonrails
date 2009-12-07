@@ -1,0 +1,8 @@
+  <div>
+  <span style="font-size:20pt; padding-left: 20px; font-weight: bold; color:#999999;">Project Dashboard</span>
+  <%= link_to "All releases", :action => :taskboard, :option => "all" %>
+  </div>
+  <div>
+    <%= render :partial => "/releases/release_board", :collection => @releases, :as => :release %>
+  </div>
+

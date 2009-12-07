@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/115/branches/srikanth/db/migrate
+END
+20090501100100_add_developer_id_to_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090501100100_add_developer_id_to_bugs.rb
+END
+20090816194653_create_statuses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/99/branches/srikanth/db/migrate/20090816194653_create_statuses.rb
+END
+20090424063811_create_members.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090424063811_create_members.rb
+END
+20090501100141_add_reviewer_id_to_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090501100141_add_reviewer_id_to_bugs.rb
+END
+20090913193600_add_reviewed_to_bug.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/115/branches/srikanth/db/migrate/20090913193600_add_reviewed_to_bug.rb
+END
+20090816114017_add_is_admin_to_member.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/99/branches/srikanth/db/migrate/20090816114017_add_is_admin_to_member.rb
+END
+20090410164536_create_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090410164536_create_bugs.rb
+END
+20090913183652_add_active_to_member.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/112/branches/srikanth/db/migrate/20090913183652_add_active_to_member.rb
+END
+20090727181659_add_release_to_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/49/branches/srikanth/db/migrate/20090727181659_add_release_to_bugs.rb
+END
+20090424100141_add_nickname_to_members.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090424100141_add_nickname_to_members.rb
+END
+20090420164536_add_forecast_date_to_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090420164536_add_forecast_date_to_bugs.rb
+END
+20090716091936_add_comment_type_to_comments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090716091936_add_comment_type_to_comments.rb
+END
+20090817185222_add_status_id_to_bugs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/99/branches/srikanth/db/migrate/20090817185222_add_status_id_to_bugs.rb
+END
+20090501111832_create_comments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/28/branches/srikanth/db/migrate/20090501111832_create_comments.rb
+END
+20090727181618_create_releases.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/49/branches/srikanth/db/migrate/20090727181618_create_releases.rb
+END

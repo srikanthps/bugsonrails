@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h2>
+  Bug Manager Update for Bug Id : <%= h @bug.defect_id %>
+</h2>
+
+<p>
+<h4><%= h @bug.summary %></h4>
+<br/>
+<strong>Status</strong>: <%= h @bug.status %>
+<br/>
+<strong>Developer</strong>: <%= h @bug.developer %>
+<br/>
+<br/>
+
+</p>
+<p>
+  Bug manager tool is available <a href="http://57.5.197.83:3000/bugs"> Here </a>.
+  <br/>
+  It's developed using <a href="http://rubyonrails.org/">Ruby On RAILS</a>, a framework that revolutionized the web
+  application development!
+</p>
+</body>
+</html>

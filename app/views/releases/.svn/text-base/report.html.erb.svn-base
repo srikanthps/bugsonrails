@@ -1,0 +1,13 @@
+<table border="1px solid black">
+    <tr>
+    <td>Release</td>
+    <td>Date</td>
+    <td>Defects</td>
+    <td>CRs</td>
+    <td>Total</td>
+    <td>Code review comments</td>
+    <td>QA Failures</td>
+    <td>Top contributor</td>
+    </tr>
+    <%= render :partial => "singlerelease_table", :collection => @releases, :as => :release %>
+</table>

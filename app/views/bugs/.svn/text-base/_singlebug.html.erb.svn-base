@@ -1,0 +1,34 @@
+<tr class="<%= singlebug.bug_status.category if singlebug.bug_status%>">
+  <td style="width: 10%;">
+    <img src="images/icons/<%= singlebug.defect_type%>.png"/> # <%= h singlebug_counter + 1 %>
+    <% if singlebug.customer_issue %>
+      <img src="/images/icons/critical2.png"/>
+    <% end %>
+  </td>
+  <td style="width: 10%;">
+    <%= h singlebug.priority %>
+  </td>
+  <td style="width: 10%;">
+    <%= h singlebug.defect_id %>
+  </td>
+  <td style="width: 30%;">
+    <%= h singlebug.summary %>
+  </td>
+  <td style="width: 15%;">
+    <%= h singlebug.release.release_number if singlebug.release  %>
+  </td>
+  <td style="width: 15%;">
+    <%= h singlebug.bug_status.description if singlebug.bug_status%>
+  </td>
+  <td style="width: 10%;">
+    <%= h singlebug.developer.nickname if singlebug.developer %>
+  </td>
+  <td style="width: 10%;">
+    <%= h singlebug.customer %>
+  </td>
+
+  <td>
+   <%= link_to 'Update', edit_bug_path(singlebug) %>
+   <%= link_to 'Destroy', singlebug, :confirm => 'Are you sure?', :method => :delete if session[:user].admin? %>
+  </td>
+</tr>

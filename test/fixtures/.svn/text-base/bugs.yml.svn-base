@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  defect_id: 1
+  type: MyString
+  priority: MyString
+  summary: MyText
+  developer: MyString
+  status: MyString
+
+two:
+  defect_id: 1
+  type: MyString
+  priority: MyString
+  summary: MyText
+  developer: MyString
+  status: MyString

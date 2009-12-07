@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/114/branches/srikanth/app/models
+END
+bug.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/114/branches/srikanth/app/models/bug.rb
+END
+release.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/81/branches/srikanth/app/models/release.rb
+END
+comment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/33/branches/srikanth/app/models/comment.rb
+END
+status.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/99/branches/srikanth/app/models/status.rb
+END
+bug_observer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/33/branches/srikanth/app/models/bug_observer.rb
+END
+bug_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/77/branches/srikanth/app/models/bug_mailer.rb
+END
+member.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/110/branches/srikanth/app/models/member.rb
+END

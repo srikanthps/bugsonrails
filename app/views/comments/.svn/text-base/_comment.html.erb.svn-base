@@ -1,0 +1,49 @@
+<h1>Comment for Bug: <%= h @bug.defect_id %></h1>
+
+<% remote_form_for([@bug, @comment]) do |f| %>
+    <%= f.error_messages %>
+
+    <%= f.hidden_field :commenter_id, :value => session[:user].id %>
+
+    <p>
+      <%= f.label :body %><br/>
+      <%= f.text_area :body, :cols => 60, :rows => 4 %>
+    </p>
+
+    <div style="width: 500px">
+      <fieldset style="border: 1px solid black; padding: 2px;">
+        <legend>Comment type</legend>
+        <table width="500px">
+          <tr>
+            <td>
+              <%= f.radio_button :comment_type, Comment::REVIEW %>  <%= label_tag(:comment_type, "Code Review" ) %>
+            </td>
+            <td>
+              <%= f.radio_button :comment_type, Comment::ADDITIONAL_REQUIREMENT %>  <%= label_tag(:comment_type, "Additional Requirement" ) %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.radio_button :comment_type, checked_value=Comment::QA_FAILURE %>  <%= label_tag(:comment_type, "QA Failure") %>
+            </td>
+            <td>
+              <%= f.radio_button :comment_type, checked_value=Comment::DEVELOPER_NOTE %>  <%= label(:comment, :comment_type, "Developer Note") %>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset style="border: 1px solid black; padding: 2px;">
+        <legend><%= f.label :status %></legend>
+        <%= f.radio_button :status, checked_value='Open' %>  <%= label_tag(:status, "Open" ) %>
+        <%= f.radio_button :status, checked_value='ActionTaken' %>  <%= label_tag(:status, "Action taken" ) %>
+        <%= f.radio_button :status, checked_value='Verified' %>  <%= label_tag(:status, "Verified" ) %>
+      </fieldset>
+    </div>
+
+
+    <p>
+      <%= f.submit "Save" %>
+    </p>
+
+<% end %>

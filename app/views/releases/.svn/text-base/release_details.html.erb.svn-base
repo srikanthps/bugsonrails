@@ -1,0 +1,23 @@
+<div style="">
+
+  <h2>Release details</h2>
+
+  <% remote_form_for(@release) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :release_number %><br/>
+      <%= f.text_field :release_number %>
+    </p>
+
+    <p >
+         <%= f.label :release_date %>
+         <%= calendar_date_select :release, :release_date, :embedded => true, :year_range => [0.years.ago, 1.years.from_now], :time => false %>
+    </p>
+    
+    <p>
+      <%= f.submit 'Save' %>
+    </p>
+<% end %>
+
+</div>

@@ -1,0 +1,2 @@
+
+page.insert_html :top, 'new_release_form', error_messages_for(:release)  

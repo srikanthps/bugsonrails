@@ -1,0 +1,11 @@
+<div>
+<h1>Login</h1>
+
+<% form_tag '/login/authenticate' do -%>
+    <%= label_tag 'user_id', "Nick Name" %>
+    <%= text_field_tag "user_id" %> <br/>
+    <br/>
+    <%= submit_tag "Sign in" %>
+<% end -%>
+
+</div>	

@@ -1,0 +1,8 @@
+if @success then
+  page.replace_html "releaseUpdateForm#{@bug.defect_id}", ''
+  page.hide "changeReleaseDiv#{@bug.defect_id}"
+  page.replace_html "bugReleaseNumber#{@bug.defect_id}", (@bug.release && @bug.release.release_number) || ""
+  page.visual_effect :highlight , "centerContainer#{@bug.defect_id}"
+else
+  page.insert_html :top, "releaseUpdateForm#{@bug.defect_id}", error_messages_for(:bug, :class => "errorDiv", :id=> "errorDiv")
+end

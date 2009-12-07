@@ -1,0 +1,4 @@
+
+page.replace_html 'comments_form', ''
+
+page.replace_html 'comments', :partial => 'singlecomment',  :collection => @comment.bug.comments

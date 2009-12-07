@@ -1,0 +1,69 @@
+<div>
+  <div style="padding-top: 10px; padding-left: 10px;">
+    <h1>Listing bugs</h1>
+    <span class="page_action"><%= link_to 'Create a new bug', new_bug_path %></span>
+    <span class="page_action"><%= link_to 'Import bugs', :controller => "bugs", :action => "import" %></span>
+  </div>
+
+  <div style="padding: 10px">
+    <% form_tag('bugs/filter', :method => :post) do -%>
+        <fieldset>
+          <legend>Developer filter</legend>
+          <% Member.find_all_by_active(true).each do |m| -%>
+              <%= label_tag  m.nickname %>
+              <%= check_box_tag "developer_to_filter[]", value = m.id, session[:developer_to_filter].include?(m.id.to_s), { :id => "developer_filter_#{m.nickname}" } %> |
+          <% end %>
+        </fieldset>
+        <fieldset>
+          <legend>Status filter</legend>
+          <% Status.all.each_with_index do |s, index| -%>
+             <%= check_box_tag "status_to_filter[]", value = s.id, session[:status_to_filter].include?(s.id.to_s)  %>
+             <%= label_tag  s.description %> |
+          <% end %>
+        </fieldset>
+
+        <fieldset>
+          <legend>Release filter</legend>
+          <% Release.all.each_with_index do |s, index| -%>
+             <%= check_box_tag "release_to_filter[]", value = s.id, session[:release_to_filter] && session[:release_to_filter].include?(s.id.to_s)  %>
+             <%= label_tag  s.release_number %> |
+          <% end %>
+        </fieldset>
+        <%= submit_tag ("Filter") %>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div id="container" style="margin: 10px;">
+
+  <table cellspacing="0" style="border: 2px solid;" >
+    <tr>
+      <td>#</td>
+      <td>Priority</td>
+      <td>Defect Id</td>
+      <td>Summary</td>
+      <td>Target release</td>
+      <td>Status</td>
+      <td>Developer</td>
+      <td>Customer</td>
+      <td>Actions</td>
+    </tr>
+    <%= render :partial => 'singlebug', :collection => @bugs, :as => :singlebug %>
+  </table>
+
+</div>
+
+
+<div style="clear:both; padding-top: 10px; padding-left: 10px;">
+  <span class="page_action"><%= link_to 'Create a new bug', new_bug_path %></span>
+  <span class="page_action"><%= link_to 'Import bugs', :controller => "bugs", :action => "import" %></span>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+

@@ -1,0 +1,18 @@
+<div id="task_<%= task.id%>" style="width: 65px;float:left; padding: 2px; margin: 5px; cursor: pointer;  z-index:10" class="task <%= h task.bug_status.category if task.bug_status %>">
+  <div style=" font-size: 15pt; ">
+    <%= h task.defect_id %>
+    
+    
+    
+  </div>
+  <div style="font-size: 8pt;"><%= (task.developer && task.developer.nickname) || "&nbsp;" %></div>
+  <div style="font-size: 8pt; position: relative">
+    <%= link_to "Edit", :action => :edit, :controller => "bugs", :id => task %>
+    <div style="position:absolute; right: -5px; bottom: -10px;">
+    	<img src="/images/icons/<%= task.defect_type %>.png" alt="<%= task.defect_type %>"></img>
+    </div>
+  </div>
+</div>
+
+
+<%= draggable_element "task_#{task.id}", :revert => true %>

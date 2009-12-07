@@ -1,0 +1,22 @@
+<div style="margin: 3px; padding: 3px; border: 1px solid grey;">
+  <% remote_form_for @bug do |f| %>
+      <div style="">
+        <div style="margin: 5px;">
+          <div style="float:right;">
+            <%= collection_select(:bug, :release_id, @releases, :id, :release_info, :include_blank => true) %>
+          </div>
+          <div style="">
+            <strong><%= f.label :release %></strong>
+          </div>
+        </div>
+        <div style="margin: 5px; padding-top: 10px;">
+          <div style="float:right;">
+            <%= f.submit 'Save' %>
+          </div>
+          <div>
+            <input value="Cancel" type="button" onclick='$("releaseUpdateForm<%= h @bug.defect_id %>").update("")'/>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

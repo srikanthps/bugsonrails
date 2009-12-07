@@ -1,0 +1,26 @@
+<%
+release_div_id = "release_#{release.id}"
+%>
+<div style=" ">
+  <div id="<%= h release_div_id %>"  style="border: 2px solid silver; margin-bottom: 5px; float:left;width: 400px;">
+    <div  style="font-size: 12pt;">
+      <span>
+        <%= h release.release_number %>
+      </span>
+      <span style="padding-left: 10px;">
+        <%= h release.release_date.strftime("%d-%b-%Y") if release.release_date%>
+      </span>
+    </div>
+    <div style="float:right; font-size: 15pt; color: gray">
+      <%= h "#{(distance_of_time_in_words_to_now release.release_date)} left" if release.release_date and release.release_date > Time.now %>
+      <%= h "#{(distance_of_time_in_words_to_now release.release_date)} ago" if release.release_date and release.release_date <= Time.now %>
+    </div>
+
+    <div style="padding-top: 5px;">
+      <%= link_to_remote "Edit", :url => edit_release_path(release), :update => 'new_release_form', :method => :get %>
+      <%= link_to_remote "Delete", :url => release_path(release), :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
+
+
+</div>

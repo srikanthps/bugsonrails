@@ -1,0 +1,35 @@
+<% form_for(@bug) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :defect_id %><br/>
+      <%= f.text_field :defect_id %>
+    </p>
+    <p>
+      <%= f.label :type %><br/>
+      <%= f.text_field :defect_type %>
+    </p>
+    <p>
+      <%= f.label :priority %><br/>
+      <%= f.text_field :priority %>
+    </p>
+    <p>
+      <%= f.label :summary %><br/>
+      <%= f.text_area :summary %>
+    </p>
+    <p>
+      <%= f.label :developer %><br/>
+      <%= collection_select(:bug, :developer_id, Member.all, :id, :nickname, :include_blank => true) %>
+    </p>
+    <p>
+      <%= f.label :status %><br/>
+      <%= collection_select(:bug, :status_id, Status.find_by_user_role(session[:user].admin?), :id, :description, :include_blank => true) %>
+    </p>
+    <p>
+      <%= f.label :release %><br/>
+      <%= collection_select(:bug, :release_id, Release.all, :id, :release_number, :include_blank => true) %>
+    </p>
+    <p>
+      <%= f.submit 'Save' %>
+    </p>
+<% end %>

@@ -1,0 +1,21 @@
+<div>
+  <div style="padding-top: 10px; padding-left: 10px;">
+    <h1>Listing releases</h1>
+    <span class="page_action">
+        <%= link_to_remote 'Create a release', :url => new_release_path(@release), :update => 'new_release_form', :method => :get %>
+    </span>
+  </div>
+
+</div>
+
+
+<div style="width: 500px;padding-top: 20px;">
+  <div id="new_release_form" style=""></div>
+
+  <div id="releases_container" style="">
+    <%= render :partial => "singlerelease", :collection => @releases, :as => :release %>
+  </div>
+</div>
+
+
+

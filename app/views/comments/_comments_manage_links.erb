@@ -1,0 +1,26 @@
+Current Type: <strong><%= h comment.comment_type %></strong>
+<br/>
+
+<% if (!comment.review?) && comment.bug %>
+    <%= link_to_remote 'Mark as Review Comment', :url => { :action => "update_comment_type_ajax", :id => comment.id, :comment_type => "Review", :comment_index => comment_index}, :update => ("comments_links_" + comment_index.to_s), :complete => visual_effect(:highlight, "comments_links_" + comment_index.to_s, :duration => 1) %>
+    <br/>
+<% end %>
+
+<% if !comment.qa_failure? && comment.bug %>
+    <%= link_to_remote 'Mark as QA Failure Comment', :url => { :action => "update_comment_type_ajax", :id => comment.id, :comment_type => "QA-Failure", :comment_index => comment_index}, :update => ("comments_links_" + comment_index.to_s), :complete => visual_effect(:highlight, "comments_links_" + comment_index.to_s, :duration => 1) %>
+    <br/>
+<% end %>
+
+<% if !comment.additional_requirement? && comment.bug %>
+    <%= link_to_remote 'Mark as Additional Requirement', :url => { :action => "update_comment_type_ajax", :id => comment.id, :comment_type => "Additional-Requirement", :comment_index => comment_index}, :update => ("comments_links_" + comment_index.to_s), :complete => visual_effect(:highlight, "comments_links_" + comment_index.to_s, :duration => 1) %>
+    <br/>
+<% end %>
+
+<% if !comment.developer_note? && comment.bug %>
+    <%= link_to_remote 'Mark as Developer Note', :url => { :action => "update_comment_type_ajax", :id => comment.id, :comment_type => "Developer-Note", :comment_index => comment_index}, :update => ("comments_links_" + comment_index.to_s), :complete => visual_effect(:highlight, "comments_links_" + comment_index.to_s, :duration => 1) %>
+    <br/>
+<% end %>
+
+<br/>
+<br/>
+	
