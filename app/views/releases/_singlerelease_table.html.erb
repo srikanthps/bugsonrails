@@ -8,8 +8,8 @@
 <tr style="<%= h row_style%>">
   <td><%= release.release_number%> </td>
   <td><%= h release.release_date.strftime("%d-%b-%Y") if release.release_date%></td>
-  <td><%= h release.bugs.select { |b| b.status.eql?("Done") and b.defect_type.eql?("Defect")}.size  %></td>
-  <td><%= h release.bugs.select { |b| b.status.eql?("Done") and b.defect_type.eql?("Change Request")}.size  %></td>
+  <td><%= h release.bugs.select { |b| b.bug_status.category.eql?("done") and b.defect_type.eql?("Defect")}.size  %></td>
+  <td><%= h release.bugs.select { |b| b.bug_status.category.eql?("done") and b.defect_type.eql?("Change Request")}.size  %></td>
   <td><%= h release.bugs.size  %></td>
 
   <%
@@ -19,7 +19,7 @@
     release.bugs.each do |bug|
         review_comments += bug.comments.select { |c| c.comment_type.eql?(Comment::REVIEW)}.size
         qa_failures += bug.comments.select { |c| c.comment_type.eql?(Comment::QA_FAILURE)}.size
-        developers << bug.developer.nickname if bug.developer and bug.status.eql?("Done")
+        developers << bug.developer.nickname if bug.developer and bug.bug_status.category.eql?("done") 
 
     end
 
