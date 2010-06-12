@@ -51,10 +51,6 @@
 
 <h2>Details for <%= h @bug.defect_type %>:   <%= h @bug.defect_id %> </h2>
 
-<% if @bug.customer_issue %>
-<img src="/images/icons/critical2.png"/>
-<% end %>
-
 <div id="bugs_and_comments_area" style="width: 900px;">
   <div id="bug_area" style="float: left; width: 400px; padding-right: 10px; ">
     <% form_for(@bug) do |f| %>

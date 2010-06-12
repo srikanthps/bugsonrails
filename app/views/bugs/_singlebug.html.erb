@@ -1,9 +1,6 @@
 <tr class="<%= singlebug.bug_status.category if singlebug.bug_status%>">
   <td style="width: 10%;">
     <img src="images/icons/<%= singlebug.defect_type%>.png"/> # <%= h singlebug_counter + 1 %>
-    <% if singlebug.customer_issue %>
-      <img src="/images/icons/critical2.png"/>
-    <% end %>
   </td>
   <td style="width: 10%;">
     <%= h singlebug.priority %>
@@ -22,9 +19,6 @@
   </td>
   <td style="width: 10%;">
     <%= h singlebug.developer.nickname if singlebug.developer %>
-  </td>
-  <td style="width: 10%;">
-    <%= h singlebug.customer %>
   </td>
 
   <td>
