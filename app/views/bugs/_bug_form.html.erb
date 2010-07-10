@@ -7,7 +7,7 @@
     </p>
     <p>
       <%= f.label :type %><br/>
-      <%= f.text_field :defect_type %>
+      <%= f.select :defect_type, options_for_select([['Change Request', 'Change Request'], ['Defect', 'Defect']]) %>
     </p>
     <p>
       <%= f.label :priority %><br/>
@@ -23,10 +23,10 @@
     </p>
     <p>
       <%= f.label :status %><br/>
-      <%= collection_select(:bug, :status_id, Status.find_by_user_role(session[:user].admin?), :id, :description, :include_blank => true) %>
+      <%= collection_select(:bug, :status_id, Status.find_by_user_role(session[:user].admin?), :id, :description) %>
     </p>
     <p>
-      <%= f.label :release %><br/>
+      <%= f.label :target_release %><br/>
       <%= collection_select(:bug, :release_id, Release.all, :id, :release_number, :include_blank => true) %>
     </p>
     <p>

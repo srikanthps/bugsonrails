@@ -178,15 +178,6 @@ class BugsController < ApplicationController
         
         existing_bug = bug_results[0]
 
-        if row[5].casecmp("XS") == 0 or row[5].casecmp("QC") == 0
-         logger.info row[5] + " ---------------- Not a customer issue -------------- "
-        else
-          logger.info row[5] + " is a customer issue"
-          existing_bug.customer_issue = true
-          existing_bug.customer = row[5]
-          existing_bug.save_without_validation! 
-        end
-
         if existing_bug.bug_status.category == 'done'
           existing_bugs_that_should_not_be_in_done_status = existing_bugs_that_should_not_be_in_done_status + existing_bug.defect_id.to_s + " (#{row[2]}), "
           logger.info "#{existing_bug.defect_id} (#{row[2]}) should not be in DONE state"

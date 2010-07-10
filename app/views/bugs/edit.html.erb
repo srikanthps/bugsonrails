@@ -77,7 +77,7 @@
         </p>
 
         <p>
-          <%= "Is review done and RADAR updated with issues found?" %> <%= check_box(:bug, :reviewed) %> <br/>
+          <%= "Is code review done?" %> <%= check_box(:bug, :reviewed) %> <br/>
           <%= "Reviewer" %> <%= collection_select(:bug, :reviewer_id, Member.all, :id, :nickname, :include_blank => true) %>
         </p>
 
