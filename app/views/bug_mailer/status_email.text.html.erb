@@ -11,15 +11,27 @@
 <p>
 <h4><%= h @bug.summary %></h4>
 <br/>
-<strong>Status</strong>: <%= h @bug.status %>
+<strong>Status</strong>: <%= h @bug.bug_status.description %>
 <br/>
-<strong>Developer</strong>: <%= h @bug.developer %>
+<strong>Developer</strong>: <%= h @bug.developer.nickname %>
 <br/>
+<strong>Target release:</strong><%= h @bug.release.release_number if @bug.release  %>
 <br/>
 
 </p>
+
 <p>
-  Bug manager tool is available <a href="http://57.5.197.83:3000/bugs"> Here </a>.
+	<br/>
+	<br/>
+	<div><strong>Comments:</strong></div>
+	<br/>
+	<ol>	
+		<%= render :partial => '/bug_mailer/comment_history', :collection => @bug.comments, :as => :singlecomment %>
+    </ol>
+</p>
+
+<p>
+  Bug manager tool is available <a href="http://glowing-dusk-64.heroku.com/"> Here </a>.
   <br/>
   It's developed using <a href="http://rubyonrails.org/">Ruby On RAILS</a>, a framework that revolutionized the web
   application development!

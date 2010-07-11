@@ -22,4 +22,15 @@ class Bug < ActiveRecord::Base
     "Defect".eql?(defect_type)
   end
 
+  after_create :deliver_create_notification
+  after_update :deliver_update_notification
+  
+  def deliver_create_notification
+    BugMailer.deliver_status_email(self, "Created")
+  end
+
+  def deliver_update_notification
+    BugMailer.deliver_status_email(self, "Updated")
+  end
+  
 end
