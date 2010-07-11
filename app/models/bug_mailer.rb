@@ -1,7 +1,7 @@
 class BugMailer < ActionMailer::Base
 
   def status_email(bug, action_taken)
-    emails = Member.all.map { |member| member.email }.compact
+    emails = Member.all.map { |member| member.email }.select { |email| email != nil && email != '' }
     
     if emails then
       recipients emails
