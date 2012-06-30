@@ -1,5 +1,0 @@
-<h1>New member</h1>
-
-<%= render :partial => "member" %>
-
-<%= link_to 'Back', members_path %>

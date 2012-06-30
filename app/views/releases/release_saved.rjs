@@ -1,4 +1,0 @@
-
-page.replace_html 'releases_container', :partial => "singlerelease", :collection => @releases, :as => :release
-
-page.replace_html 'new_release_form', ''
